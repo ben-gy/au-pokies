@@ -444,7 +444,7 @@ function render() {
     <footer class="site-footer">
       <div class="footer-inner">
         <span>Data compiled from state gambling regulators · casino EGMs excluded · figures rounded. Not affiliated with any gambling operator.</span>
-        <span>Gambling help: <strong>1800 858 858</strong> · Built by <a href="https://benrichardson.dev/">benrichardson.dev</a></span>
+        <span>Gambling help: <strong>1800 858 858</strong> · Built by <a href="https://benrichardson.dev/">benrichardson.dev</a> · <a href="https://hub.benrichardson.dev" target="_blank" rel="noopener">more tools &amp; sites</a></span>
       </div>
     </footer>
     ${aboutModal()}
