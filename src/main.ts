@@ -13,6 +13,7 @@ import {
   formatCurrencyCompact, formatCurrencyFull, formatNumber, intensityColor, rampPosition,
 } from './utils/format';
 import { renderMap, destroyMap } from './map';
+import { initTooltip } from './tooltip';
 
 type ViewId = 'overview' | 'leaderboard' | 'map' | 'percapita' | 'matrix' | 'treemap' | 'insights';
 
@@ -175,7 +176,8 @@ function viewPerCapita(): string {
   const dots = rows.map((r) => {
     const left = (r.perAdult / scaleMax) * 100;
     const color = intensityColor(rampPosition(r.perAdult, 0, maxPa));
-    return `<div class="dp-row" data-slug="${r.slug}" title="${esc(r.name)}: $${formatNumber(Math.round(r.perAdult))}/adult">
+    const tip = `${r.name}: $${formatNumber(Math.round(r.perAdult))}/adult`;
+    return `<div class="dp-row" data-slug="${r.slug}" data-tip="${esc(tip)}" aria-label="${esc(tip)}">
       <div class="dp-label">${statePill(r.state)} ${esc(r.name)}</div>
       <div class="dp-track"><span class="dp-dot" style="left:${left}%;background:${color}"></span></div>
     </div>`;
@@ -248,7 +250,8 @@ function viewTreemap(): string {
   const html = cells.map(({ x, y, w, h, item }) => {
     const r = item.row;
     const showLabel = w > 7 && h > 11;
-    return `<div class="tm-cell" data-slug="${r.slug}" title="${esc(r.name)} (${r.state}): ${formatCurrencyFull(r.loss)}"
+    const tip = `${r.name} (${r.state}): ${formatCurrencyFull(r.loss)}`;
+    return `<div class="tm-cell" data-slug="${r.slug}" data-tip="${esc(tip)}" aria-label="${esc(tip)}"
       style="left:${x}%;top:${y}%;width:${w}%;height:${h}%;background:${stateColor(r.state)}">
       ${showLabel ? `<div class="tm-name">${esc(r.name)}</div><div class="tm-val">${formatCurrencyCompact(r.loss)}</div>` : ''}
     </div>`;
@@ -562,4 +565,5 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+initTooltip();
 render();

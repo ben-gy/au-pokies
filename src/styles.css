@@ -232,6 +232,17 @@ tbody tr { cursor: pointer; }
 }
 #glossary-tip strong { display: block; margin-bottom: 3px; color: #fff; }
 
+/* ── Global hover tooltip ([data-tip]) ── */
+.hover-tip {
+  position: fixed; z-index: 10000; pointer-events: none;
+  background: var(--text-primary); color: #fff;
+  padding: 0.4rem 0.6rem; border-radius: 4px;
+  font-size: 0.76rem; line-height: 1.4; max-width: 300px;
+  box-shadow: var(--shadow-md);
+  opacity: 0; transition: opacity 100ms ease;
+}
+.hover-tip.visible { opacity: 1; }
+
 /* ── Modal ── */
 .modal-backdrop {
   position: fixed; inset: 0; z-index: 90; background: rgba(22, 36, 31, 0.45);
