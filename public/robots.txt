@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://au-pokies.benrichardson.dev/sitemap.xml
