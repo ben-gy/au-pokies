@@ -75,6 +75,17 @@ The dataset lives in `src/data/pokies.ts` as typed arrays of LGA and state recor
 
 This site is educational and does not promote gambling. If gambling is causing harm, call the National Gambling Helpline on **1800 858 858** (free, 24/7).
 
-## License
+## license
 
-MIT
+[GNU Affero General Public License v3.0 or later](./LICENSE), with an attribution
+requirement added under section 7(b) — see
+[ADDITIONAL-TERMS.md](./ADDITIONAL-TERMS.md).
+
+In short: you may run, modify, redistribute and even sell this, but if you
+distribute it — or run a modified version where other people can reach it — you
+have to publish your source under the same licence and keep the attribution. A
+separate commercial licence without those obligations is available on request:
+<hi@ben.gy>.
+
+Third-party components keep their own licences — see
+[THIRD-PARTY-NOTICES.md](./THIRD-PARTY-NOTICES.md).
